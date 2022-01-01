@@ -6,9 +6,7 @@ dotenv.config();
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
-    res.send('shepp');
-})
+app.use('/api/', require('./routes/index'));
 
 app.listen(process.env.PORT, function () {
     console.log(`Listening on port ${process.env.PORT}`);
